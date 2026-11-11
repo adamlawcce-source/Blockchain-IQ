@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "blockchain-iq-langchain"
+version = "0.1.0"
+description = "LangChain tools for the Blockchain IQ x402 API — pay-per-call crypto data in USDC on Base"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Ts Studio" }]
+keywords = ["langchain", "x402", "blockchain-iq", "crypto", "usdc", "base"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+]
+dependencies = [
+    "langchain-core>=1.0,<2",
+    "x402[evm]==2.27.0",
+    "eth-account>=0.13",
+    "web3>=8,<9",
+    "requests>=2.31",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[tool.setuptools.packages.find]
+include = ["blockchain_iq_langchain*"]
